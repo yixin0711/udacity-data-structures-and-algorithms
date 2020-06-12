@@ -1,0 +1,8 @@
+The BlockChain object is built based on Block object, which stores the data, hash value, previous hash value, a pointer refers to the next block, and the timestamp when created the block.
+
+Both add_block() and get_block() method will loop over the whole blockchain instead add_block() will add an additional block to the end of the blockchain. The get_block method will retrieve the blockchain and return the information on the block if the block data is found. 
+
+Both method will take O(n) time to be done where n is the number of blocks in the blockchain. 
+
+The BlockChain object is very similar to a Linked List object, which is also taken linear space complexity O(n) where n is the number of blocks inputted and each block takes up O(1) space. 
+

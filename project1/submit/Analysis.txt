@@ -1,0 +1,20 @@
+Task 0:
+Time complexity: O(1)
+Since we have indexed list, it will take 1 operation for searching. Thus we have fixed time complexity of O(1)
+
+Task 1:
+Time complexity: O(n)
+This method need an iteration through the list so in general it will take O(n) times to complete the function. 
+
+Task 2:
+Time complexity: O(n)
+This method also need an iteration through the whole list which will take O(n) times to complete. 
+
+Task 3:
+Time complexity: O(nlog[n])
+First, this method requires a for-loop which takes linear times. However, the sort() function has a worst-case time-complexity of O(nlog[n]). Thus according to the dominant rule of Big O Notation, this method takes O(nlog[n]) times.
+
+Task 4:
+Time complexity: O(nlog[n])
+Similar to Task 3, this method requires a for-loop which takes linear times. However, the sort() function has a worst-case time-complexity of O(nlog[n]). Thus according to the dominant rule of Big O Notation, this method takes O(nlog[n]) times.
+

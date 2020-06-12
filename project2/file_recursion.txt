@@ -1,0 +1,3 @@
+This function find all the files with specific suffix in the given path, including the sub directory in the path. We used the listdir() function from os to get all the subdirectories and retrieve those subdirectories in a recursive manner. Since recursive method is basically a loop, and we have to loop over both the directories and files, this method gives O(mn) time complexity where n is the number of directories and m is the number of files in each directory. 
+
+The space complexity is also O(nm) since in each recursion, the function list out all the subdirectories of the given path and all files in each subdirectory. 

@@ -1,0 +1,5 @@
+This algorithm will find whether a user is belong to a given group, including the subgroups of this group. 
+
+Since we use a recursive method, the time complexity is depends on the number of users in the group (denoted as n) and number of subgroups in the group (denoted as m). The overall complexity will be O(nm). 
+
+The space complexity will also be O(nm) since we have to list out all the subgroups in the given group and all the users in each subgroups. 

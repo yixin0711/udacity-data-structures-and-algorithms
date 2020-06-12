@@ -1,0 +1,9 @@
+This algorithm find the union and intersection of two linked list.
+
+Both algorithm use the hash table data structure, where the value itself is the key, and I assign the next node to be the value of that key (but this is not important). They both loop over the first and second given linked list so in general, they both cost O(m+n) time where m and n indicates the size of first and second linked list. 
+
+In the union method, when the value is not found in the hash table, we save it to the hash table and make it into our union list. 
+
+In the intersection method, when the value is found in the hash table, we make it into our intersection list, otherwise we save it to the hash table. 
+
+Both method involve a hash table. In the worst case of union method, when the two linked list has no intersection, the the hash table need O(m+n) space complexity to finish and there is an additional 0(m+n) space for the output list. It is the same for intersection method. When there is no intersection of the two given linked list, all values are stored in the hash table and thus it also required O(m+n) space. Thus, in general, this method takes O(m+n) space for both union and intersection.  

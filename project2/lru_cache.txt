@@ -1,0 +1,7 @@
+The LRU_Cache object used a hash table together with queue data structure with fixed capacity to store cache. The cache has a key and the value. 
+
+The get method retrieve the cache and return the value of the cache. In this method, once we find the key, we pop the cache and push it back to the hash table immediately. Both operation cost O(1) time to be done. 
+
+The set method push the cache into the hash table if the hash table is not full, and it will pop the first item in the hash table if the hash table is indeed full. This operation also cost O(1) time to be done.
+
+Since the LRU_Cache is stored in the hash table, the overall space complexity is O(n) where n is the number of element in the cache or the capacity of this LRU_Cache.

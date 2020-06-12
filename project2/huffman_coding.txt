@@ -1,0 +1,15 @@
+Huffman coding can be divided into the encoding part and the decoding part.
+
+For the encoding part, we need to first generate the frequency table of each character in the text given.For finding the frequency of each character in the text, it will loop over the text so it will take O(n) time.
+
+The first main part of encoding algorithm is to merge and sort the frequency node and then create a Huffman Tree. The sorting and merging algorithm takes two node to merge at each time but will also push back one combined node, so in general the merging takes O(n) time to finish. 
+
+The second main part is the encoding of Huffman coding from a tree which involve searching through a binary search tree. In general, search through a BST will takes O(n*log[n]) time since log[n] is the height of the tree and n is the length of information given. 
+
+To sum up, due to the nature of time complexity only takes the largest one, the encoding algorithms takes O(n*log[n]) time to be done. 
+
+The decoding algorithms behave similar to the encoding algorithm. It will also search through a BST which will take  O(n*log[n]) time to be done.
+
+The main data structure used in this algorithm is HeapNode and priority queue from heapq. A HeapNode is very similar to a node, which store a char, the freq and its left and right child if available. This is an ideal data structure for Huffman coding. A priority queue will effectively help us with sorting the frequency table.
+
+As for space complexity, since the Huffman Code algorithm uses a heapq data structure, it is linear O(n) where n is inputed size of the text. 
