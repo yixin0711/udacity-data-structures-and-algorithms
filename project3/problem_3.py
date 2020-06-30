@@ -27,7 +27,7 @@ def rearrange_digits(input_list):
     if len(input_list) == 1:
         return input_list
     
-    items = reverse_mergesort(input_list)
+    items = merge(input_list)
     list1 = list()
     list2 = list()
     
@@ -40,36 +40,33 @@ def rearrange_digits(input_list):
     return [int("".join(list1)), int("".join(list2))]
     
 
-def merge(left, right):
-    merged = []
-    left_index = 0
-    right_index = 0
+def merge(lst):
+    if len(lst) < 2:
+        return lst
     
-    while left_index < len(left) and right_index < len(right):
-        if left[left_index] < right[right_index]:
-            merged.append(right[right_index])
-            right_index += 1
+    middle = len(lst)//2
+    left = merge(lst[:middle])
+    right = merge(lst[middle:])
+    
+    i, j, k = 0, 0, 0
+    while i < len(left) and j < len(right):
+        if left[i] >= right[j]:
+            lst[k] = left[i]
+            i += 1
         else:
-            merged.append(left[left_index])
-            left_index += 1
-    
-    merged += left[left_index:]
-    merged += right[right_index:]
-    
-    return merged
-    
-def reverse_mergesort(ints):
-    if len(ints) <= 1:
-        return ints
-    
-    index = len(ints) // 2
-    left = ints[:index]
-    right = ints[index:]
-    
-    left = reverse_mergesort(left)
-    right = reverse_mergesort(right)
-    
-    return merge(left, right)
+            lst[k] = right[j]
+            j += 1
+        k += 1
+    while i < len(left):
+        lst[k] = left[i]
+        i += 1
+        k += 1
+    while j < len(right):
+        lst[k] = right[j]
+        j += 1
+        k += 1
+    return lst
+
 
 def test_function(test_case):
     output = rearrange_digits(test_case[0])
