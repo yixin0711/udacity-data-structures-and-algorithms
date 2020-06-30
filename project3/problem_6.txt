@@ -1,0 +1,1 @@
+This algorithm takes an unsorted array as input and return the maximum and minimum value of this array without using the built-in function. The idea of this algorithm is to create two pointers that store the current minimum and maximum value so that only a single traversal is needed. The time complexity of this algorithm is O(n) and space complexity is O(1).
