@@ -26,22 +26,26 @@ def rotated_array_search(input_list, number):
     
     start = 0
     end = len(input_list) - 1
+    return array_search_recursive(start, end, input_list, number)
+
+
+def array_search_recursive(start, end, input_list, number):
     
-    while start <= end:
+    if start <= end:
         mid = (start + end) // 2
         if number == input_list[mid]:
             return mid
         
         if input_list[start] <= input_list[mid]:
             if input_list[start] <= number <= input_list[mid]:
-                end = mid - 1
+                return array_search_recursive(start, mid - 1, input_list, number)
             else:
-                start = mid + 1
+                return array_search_recursive(mid + 1, end, input_list, number)
         else:
             if input_list[mid] <= number <= input_list[end]:
-                start = mid +1
+                return array_search_recursive(mid + 1, end, input_list, number)
             else:
-                end = mid - 1
+                return array_search_recursive(start, mid - 1, input_list, number)
     return -1
 
 def linear_search(input_list, number):
